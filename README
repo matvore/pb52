@@ -1,0 +1,19 @@
+pb52: Filter output from your shell to make Terminal.app OSC 52-capable
+
+This simple tool makes Terminal.app capable of copying/pasting text with the
+OSC 52 escape sequence. Terminal.app is a perfectly fine terminal emulator for
+many use cases except for its omission of OSC 52 support, so this tool may save
+you from downloading alternative terminal emulators.
+
+To compile, you need Xcode Command-Line Tools installed. You can compile like this:
+
+  $ gcc -O3 -o pb52 pb52.c
+
+Then run like this if you are ssh-ing to a remote machine:
+
+  $ ssh some-machine | ./pb52
+
+Or like this to use it locally with bash:
+
+  $ bash -l | ./pb52
+
